@@ -72,7 +72,7 @@ class Dynasty:
             labels[node] = node
         nx.draw_networkx_nodes(graph, pos, but(self.people, self.king), 300, "#FF0000")
         # nx.draw_networkx_nodes(graph, pos, self.people, 300, "#FF0000")
-        # nx.draw_networkx_nodes(graph, pos, self.king, 300, "#FF00FF")
+        nx.draw_networkx_nodes(graph, pos, self.king, 300, "#FF00FF")
         nx.draw_networkx_labels(graph, pos, labels)
         nx.draw_networkx_edges(graph, pos, edgelist=list(self.marriages_w.items()), edge_color='r', arrows=False)
         nx.draw_networkx_edges(graph, pos, edgelist=list(self.sons.items()), edge_color='b', arrows=True)
@@ -80,9 +80,9 @@ class Dynasty:
 
 
 g = Dynasty(0)
-g.add_son(1, 0, 23)
+g.add_son(1, 0, 9)
 g.draw()
 g.king_die()
 sleep(3)
-g.add_son(4, 23, 32)
+g.add_son(4, 9, 6)
 g.draw()
